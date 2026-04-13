@@ -1,0 +1,19 @@
+.ShopCategory {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.ShopCategory img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.ShopCategory-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 80px;
+  margin-top: 30px;
+}

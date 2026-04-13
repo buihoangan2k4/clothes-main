@@ -1,0 +1,238 @@
+.productDisplay {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 40px 20px;
+  gap: 60px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Left side - Product image */
+.productDisplay-left {
+  flex: 1;
+}
+
+.productDisplay-left-list {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.productDisplay-left-list:hover {
+  transform: scale(1.02);
+}
+
+.productDisplay-left-list img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+
+.productDisplay-left-list::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+/* Right side - Product details */
+.productDisplay-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.productDisplay-right-name {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.productDisplay-right-name h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.productDisplay-right-name h1:nth-child(2) {
+  font-size: 28px;
+  color: #ff3e6c;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.productDisplay-right-name h1:nth-child(3) {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.productDisplay-right-name p {
+  font-size: 16px;
+  color: #777;
+  background-color: #f8f8f8;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.productDisplay-right-size {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.productDisplay-right-size div {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.productDisplay-right-size div:hover {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productDisplay-right-btn {
+  padding: 18px 40px;
+  background: linear-gradient(45deg, #ff3e6c 0%, #ff8e8e 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  box-shadow: 0 5px 15px rgba(255, 62, 108, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.productDisplay-right-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 62, 108, 0.4);
+  background: linear-gradient(45deg, #ff2e5c 0%, #ff7e7e 100%);
+}
+
+.productDisplay-right-btn:active {
+  transform: translateY(1px);
+}
+
+.productDisplay-right-text {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  background: linear-gradient(to right, #fff8ee, #fff);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ff9800;
+  position: relative;
+  margin-top: 20px;
+}
+
+.productDisplay-right-text::before {
+  content: "🎁";
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .productDisplay {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .productDisplay-left-list {
+    height: 400px;
+  }
+
+  .productDisplay-right-name h1 {
+    font-size: 28px;
+  }
+
+  .productDisplay-right-name h1:nth-child(2) {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .productDisplay-left-list {
+    height: 300px;
+  }
+
+  .productDisplay-right-name h1 {
+    font-size: 24px;
+  }
+
+  .productDisplay-right-size div {
+    width: 50px;
+    height: 50px;
+  }
+
+  .productDisplay-right-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+/* Animation for the button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 62, 108, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 62, 108, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 62, 108, 0);
+  }
+}
+
+.productDisplay-right-btn {
+  animation: pulse 2s infinite;
+}

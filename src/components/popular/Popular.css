@@ -1,0 +1,207 @@
+.popular {
+  padding: 30px 40px 60px;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.popular::before {
+  content: "TRENDING";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.popular::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 249, 250, 1) 0%,
+    rgba(248, 249, 250, 0.8) 50%,
+    rgba(248, 249, 250, 1) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.popular-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Item styling - assuming this is the container for each product */
+/* You'll need to make sure this matches your Item component's styling */
+.popular-item > div {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.popular-item > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Create a spotlight hover effect */
+.popular-item > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.popular-item > div:hover::after {
+  opacity: 0.4;
+}
+
+/* Additional styling for the product image */
+.popular-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.popular-item > div:hover img {
+  transform: scale(1.05);
+}
+
+/* Product info container */
+.popular-item .item-details {
+  padding: 15px;
+}
+
+/* Product name */
+.popular-item .item-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.popular-item > div:hover .item-name {
+  color: #000;
+}
+
+/* Price container */
+.popular-item .item-prices {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* New price */
+.popular-item .item-price-new {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Old price */
+.popular-item .item-price-old {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* New tag for products */
+.popular-item .item-new-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 3;
+  box-shadow: 0 3px 10px rgba(255, 77, 77, 0.3);
+}
+
+/* Sale tag with discount percentage */
+.popular-item .item-discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #333;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 3;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add to cart button (assuming it might be present) */
+.popular-item .add-to-cart {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.popular-item > div:hover .add-to-cart {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .popular {
+    padding: 20px 20px 40px;
+  }
+
+  .popular-item {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .popular-item img {
+    height: 200px;
+  }
+}

@@ -1,0 +1,225 @@
+.payment {
+  display: flex;
+  margin: 50px auto;
+  max-width: 1200px;
+  gap: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Left side - form container */
+.delivery-container {
+  flex: 3;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.input-full {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-half {
+  flex: 1;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  border-color: #666;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Payment options */
+.payment-option {
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.payment-option:hover {
+  background-color: #f0f0f0;
+}
+
+.payment-option label {
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.payment-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.payment-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.momo-icon {
+  background-color: #ae2070;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.cod-icon {
+  background-color: #4a6fa5;
+  font-size: 14px;
+}
+
+.payment-text {
+  font-size: 15px;
+  color: #555;
+}
+
+/* Button */
+.complete-order-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.complete-order-btn:hover {
+  background-color: #222;
+}
+
+/* Right side - cart summary */
+.payment-right {
+  flex: 2;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  height: fit-content;
+}
+
+.payment-right-children {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.payment-right-product {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.payment-right-product img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.payment-right-product-right p {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.payment-right-bill-totall {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}
+
+.payment-right-bill p,
+.payment-right-total p {
+  margin: 5px 0;
+}
+
+.payment-right-quanlity {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.payment-right-quanlity p:nth-child(1),
+.payment-right-quanlity p:nth-child(3) {
+  font-weight: 600;
+  color: #333;
+}
+
+.payment-right-quanlity p:nth-child(2),
+.payment-right-quanlity p:nth-child(4) {
+  text-align: right;
+  font-weight: 600;
+}
+
+.payment-right-quanlity p:nth-child(3),
+.payment-right-quanlity p:nth-child(4) {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #000;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .payment {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+
+  .payment-right {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

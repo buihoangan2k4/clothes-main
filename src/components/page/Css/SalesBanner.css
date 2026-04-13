@@ -1,0 +1,125 @@
+.sales-banner {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #ffe6e6 0%, #faa9b8 100%);
+  padding: 20px;
+}
+
+.banner-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0 10%;
+  position: relative;
+  padding: 20px;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.banner-heading {
+  font-size: 3.7rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f47742;
+  line-height: 1.1;
+}
+
+.banner-timer {
+  font-size: 2rem;
+  margin: 15px 0 30px 0;
+  color: #333;
+}
+
+.hours {
+  color: #f47742;
+  font-weight: 600;
+}
+
+.minutes {
+  color: #f47742;
+  font-weight: 600;
+}
+
+.explore-button {
+  background-color: #f47742;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #e45f23;
+  transform: scale(1.05);
+}
+
+/* Add image on the right side using ::after pseudo-element */
+.sales-banner::after {
+  content: "";
+  position: absolute;
+  right: 5%;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  /* background-image: url("../../assets/kid_banner1.png"); */
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .banner-heading {
+    font-size: 4rem;
+  }
+
+  .banner-timer {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-text {
+    max-width: 70%;
+  }
+
+  .banner-heading {
+    font-size: 3rem;
+  }
+
+  .banner-timer {
+    font-size: 1.4rem;
+  }
+
+  .sales-banner::after {
+    width: 30%;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-text {
+    max-width: 100%;
+  }
+
+  .banner-heading {
+    font-size: 2.5rem;
+  }
+
+  .sales-banner::after {
+    display: none;
+  }
+}
